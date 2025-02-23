@@ -1,0 +1,58 @@
+### Login Auth Route
+POST http://localhost:5430/auth/login
+Content-Type: application/json
+
+# test 1 - invalid username
+# {
+#   "username":"ironman",
+#   "password":"tonystarkisironman"
+# }
+
+# test 2 - invalid password
+# {
+#   "username":"blackpanther",
+#   "password":"tonystarkisironman"
+# }
+
+# test 3 - valid credentials / return token
+{
+  "username":"blackpanther",
+  "password":"wakandaforever"
+}
+
+### Register Auth Route
+POST http://localhost:5430/auth/register
+Content-Type: application/json
+
+{
+  "username":"blackpanther@wakanda.forever",
+  "password":"wakandaforever"
+}
+
+### Add Token Before Running...
+
+### Get All Todos Route
+GET http://localhost:5430/todo/
+Authorization:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyaWQiOjEsInVzZXJuYW1lIjoiYmxhY2twYW50aGVyQHdha2FuZGEuZm9yZXZlciIsImlhdCI6MTc0MDMxNDA4MywiZXhwIjoxNzQwNDAwNDgzfQ.q-2au0RCtbpmcVo5_yX8IMBIqorYSr47MdLAhdY3PPM
+
+###
+POST  http://localhost:5430/todo/
+Content-Type: application/json 
+Authorization:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyaWQiOjEsInVzZXJuYW1lIjoiYmxhY2twYW50aGVyQHdha2FuZGEuZm9yZXZlciIsImlhdCI6MTc0MDMxNDA4MywiZXhwIjoxNzQwNDAwNDgzfQ.q-2au0RCtbpmcVo5_yX8IMBIqorYSr47MdLAhdY3PPM
+
+{
+  "task":"going to the gym"
+}
+
+###
+PUT http://localhost:5430/todo/2
+Content-Type: application/json
+Authorization:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyaWQiOjEsInVzZXJuYW1lIjoiYmxhY2twYW50aGVyQHdha2FuZGEuZm9yZXZlciIsImlhdCI6MTc0MDMxNDA4MywiZXhwIjoxNzQwNDAwNDgzfQ.q-2au0RCtbpmcVo5_yX8IMBIqorYSr47MdLAhdY3PPM
+
+{
+  "completed" : 1
+}
+
+###
+DELETE http://localhost:5430/todo/1
+Authorization:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyaWQiOjEsInVzZXJuYW1lIjoiYmxhY2twYW50aGVyQHdha2FuZGEuZm9yZXZlciIsImlhdCI6MTc0MDMxNDA4MywiZXhwIjoxNzQwNDAwNDgzfQ.q-2au0RCtbpmcVo5_yX8IMBIqorYSr47MdLAhdY3PPM

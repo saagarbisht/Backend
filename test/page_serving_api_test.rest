@@ -1,0 +1,5 @@
+### index route
+GET  http://localhost:5430/
+
+### not-found
+GET  http://localhost:5430/dashboard
